@@ -10,16 +10,32 @@ const ingredients = [
 const list = document.querySelector('#ingredients');
 
 const addIngredients = () => {
+
+  // ====Попередній варіант====
   
-  for (const ingredient of ingredients) {
+  // for (const ingredient of ingredients) {
+
+  //   const listItem = document.createElement('li');
+  //   listItem.textContent = ingredient;
+  //   listItem.classList.add('item');
+  //   list.append(listItem);
+
+  //   console.log(listItem);
+  // }
+
+
+  
+// ====Новий варіант з map====
+
+  ingredients.map(ingridient => {
 
     const listItem = document.createElement('li');
-    listItem.textContent = ingredient;
+    
+    listItem.textContent = ingridient;
     listItem.classList.add('item');
     list.append(listItem);
 
-    console.log(listItem);
-  }
+  });
   
 }
 addIngredients(ingredients);
