@@ -27,15 +27,20 @@ const addIngredients = () => {
   
 // ====Новий варіант з map====
 
-  ingredients.map(ingridient => {
+  const markup = ingredients.map(ingridient => {
+    
 
     const listItem = document.createElement('li');
     
     listItem.textContent = ingridient;
     listItem.classList.add('item');
-    list.append(listItem);
+
+    return listItem;
 
   });
   
+  return markup;
+  
 }
+list.append(...addIngredients());
 addIngredients(ingredients);
